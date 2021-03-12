@@ -3,6 +3,9 @@ import Layout from '../components/Layout';
 import getMatches from '../services/getMatches';
 import Head from 'next/head';
 import SummonerCard from '../components/SummonerCard';
+import { SimpleGrid } from '@chakra-ui/layout';
+import MatchCard from '../components/MatchCard';
+import { Heading } from '@chakra-ui/layout';
 
 const matches = () => {
   const [summoner, setSummoner] = useState(null);
@@ -12,8 +15,6 @@ const matches = () => {
   const loadMatches = async () => {
     setLoading(true);
     const response = await getMatches(summoner.accountId);
-    console.log(response.data.matches[0]); //TODO: Remove
-    console.log(summoner); //TODO: Remove
     setMatches(response.data.matches);
     setLoading(false);
   };
@@ -37,6 +38,16 @@ const matches = () => {
         </title>
       </Head>
       {summoner && <SummonerCard summoner={summoner} />}
+      <Heading size="md" mt={8} mb={2}>
+        Latest matches
+      </Heading>
+      {matches && (
+        <SimpleGrid columns={[1, 2]} spacing={10}>
+          {matches.map((match) => (
+            <MatchCard match={match} key={match.gameId} />
+          ))}
+        </SimpleGrid>
+      )}
     </Layout>
   );
 };
