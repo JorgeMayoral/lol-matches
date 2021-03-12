@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
           useSystemColorMode: false,
         }}
       >
-        <Box bgColor="#801336" minH="100vh">
+        <Box bgColor="#1f2933" minH="100vh">
           <Component {...pageProps} />
         </Box>
       </ColorModeProvider>
