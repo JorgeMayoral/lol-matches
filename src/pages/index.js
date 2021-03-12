@@ -1,9 +1,14 @@
-import { Box, Heading } from '@chakra-ui/layout';
+import Layout from '../components/Layout';
+import Head from 'next/head';
+import { Text } from '@chakra-ui/layout';
 
 const Index = () => (
-  <Box>
-    <Heading size="lg">LoL Matches</Heading>
-  </Box>
+  <Layout>
+    <Head>
+      <title>LoL Matches</title>
+    </Head>
+    <Text>Hello World</Text>
+  </Layout>
 );
 
 export default Index;

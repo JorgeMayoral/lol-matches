@@ -1,4 +1,4 @@
-import { ChakraProvider, ColorModeProvider } from '@chakra-ui/react';
+import { Box, ChakraProvider, ColorModeProvider } from '@chakra-ui/react';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -9,7 +9,9 @@ function MyApp({ Component, pageProps }) {
           useSystemColorMode: false,
         }}
       >
-        <Component {...pageProps} />
+        <Box bgColor="#801336" minH="100vh">
+          <Component {...pageProps} />
+        </Box>
       </ColorModeProvider>
     </ChakraProvider>
   );
