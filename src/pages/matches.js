@@ -7,7 +7,7 @@ import { SimpleGrid } from '@chakra-ui/layout';
 import MatchCard from '../components/MatchCard';
 import { Heading } from '@chakra-ui/layout';
 
-const matches = () => {
+const Matches = () => {
   const [summoner, setSummoner] = useState(null);
   const [matches, setMatches] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -52,4 +52,4 @@ const matches = () => {
   );
 };
 
-export default matches;
+export default Matches;

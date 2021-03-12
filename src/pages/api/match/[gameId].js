@@ -1,4 +1,4 @@
-const API_URL = 'https://euw1.api.riotgames.com/lol/match/v4/matches/';
+const API_URL = 'https://euw1.api.riotgames.com/lol/match/v4/matches';
 const API_KEY = process.env.RIOT_API_KEY;
 
 export default async (req, res) => {
