@@ -4,7 +4,6 @@ import { VStack } from '@chakra-ui/layout';
 import ParticipantComponent from './ParticipantComponent';
 
 const TeamComponent = ({ teamData, participants, teamColor }) => {
-  console.log(teamData);
   return (
     <Box
       bgColor={teamColor === 'blue' ? '#1ddecb' : '#efc9a4'}

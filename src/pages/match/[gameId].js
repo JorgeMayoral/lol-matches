@@ -1,12 +1,10 @@
+import { SimpleGrid } from '@chakra-ui/layout';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import getMatch from '../../services/getMatch';
 import Layout from '../../components/Layout';
 import MatchComponent from '../../components/MatchComponent';
 import TeamComponent from '../../components/TeamComponent';
-import { HStack } from '@chakra-ui/layout';
-import { useRouter } from 'next/router';
-import { Grid } from '@chakra-ui/layout';
-import { SimpleGrid } from '@chakra-ui/layout';
+import getMatch from '../../services/getMatch';
 
 const Match = () => {
   const [matchData, setMatchData] = useState(null);
@@ -14,8 +12,16 @@ const Match = () => {
   const router = useRouter();
 
   const loadMatch = async () => {
-    const response = await getMatch(gameId);
-    setMatchData(response);
+    const data = sessionStorage.getItem(`match-${gameId}`);
+    if (data) {
+      console.log(data);
+      const parsedData = JSON.parse(data);
+      setMatchData(parsedData);
+    } else {
+      const response = await getMatch(gameId);
+      setMatchData(response);
+      sessionStorage.setItem(`match-${gameId}`, JSON.stringify(response));
+    }
   };
 
   useEffect(() => {
