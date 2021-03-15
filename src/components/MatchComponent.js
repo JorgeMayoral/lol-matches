@@ -9,9 +9,8 @@ const MatchComponent = ({ matchData }) => {
   };
   return (
     <Grid>
-      <Heading>Date: {gameDate.toLocaleDateString()}</Heading>
       <Heading>
-        Duration: {duration.minutes}:{duration.seconds}
+        {gameDate.toLocaleDateString()} - {duration.minutes}:{duration.seconds}
       </Heading>
     </Grid>
   );

@@ -1,33 +1,51 @@
 import { Heading } from '@chakra-ui/layout';
+import { Box } from '@chakra-ui/layout';
 import { VStack } from '@chakra-ui/layout';
 import ParticipantComponent from './ParticipantComponent';
 
-const TeamComponent = ({ teamData, participants }) => {
+const TeamComponent = ({ teamData, participants, teamColor }) => {
+  console.log(teamData);
   return (
-    <VStack>
-      <Heading size="md">Barons: {teamData.baronKills}</Heading>
-      <Heading size="md">Dragons: {teamData.dragonKills}</Heading>
-      <Heading size="md">Inhibitors: {teamData.inhibitorKills}</Heading>
-      <Heading size="md">Heralds: {teamData.riftHeraldKills}</Heading>
-      <Heading size="md">Towers: {teamData.towerKills}</Heading>
-      {teamData.firstBaron && <Heading size="md">First Baron</Heading>}
-      {teamData.firstBlood && <Heading size="md">First Blood</Heading>}
-      {teamData.firstDragon && <Heading size="md">First Dragon</Heading>}
-      {teamData.FirstInhibitor && <Heading size="md">First Inhibitor</Heading>}
-      {teamData.firstRiftHeral && (
-        <Heading size="md">First Rift Herald</Heading>
-      )}
-      {teamData.firstTower && <Heading size="md">First Tower</Heading>}
-      <Heading>{teamData.win}</Heading>
+    <Box
+      bgColor={teamColor === 'blue' ? '#1ddecb' : '#efc9a4'}
+      borderRadius="lg"
+      p={5}
+      mr={5}
+      mb={5}
+      color="#000"
+      w={380}
+      boxShadow="dark-lg"
+    >
       <VStack>
-        {participants.map((participant) => (
-          <ParticipantComponent
-            key={participant.championId}
-            participantData={participant}
-          />
-        ))}
+        <Heading>{teamColor === 'blue' ? 'Blue Team' : 'Red Team'}</Heading>
+        <Heading size="md">{teamData.firstBlood && '🥇Blood'}</Heading>
+        <Heading size="md">
+          {teamData.firstTower && '🥇'}Towers: {teamData.towerKills}
+        </Heading>
+        <Heading size="md">
+          {teamData.FirstInhibitor && '🥇'}Inhibitors: {teamData.inhibitorKills}
+        </Heading>
+        <Heading size="md">
+          {teamData.firstDragon && '🥇'}Dragons: {teamData.dragonKills}
+        </Heading>
+        <Heading size="md">
+          {teamData.firstRiftHeral && '🥇'}Heralds: {teamData.riftHeraldKills}
+        </Heading>
+        <Heading size="md">
+          {teamData.firstBaron && '🥇'}Barons: {teamData.baronKills}
+        </Heading>
+
+        <Heading>{teamData.win === 'Win' ? '🏆' : '❌'}</Heading>
+        <VStack>
+          {participants.map((participant) => (
+            <ParticipantComponent
+              key={participant.championId}
+              participantData={participant}
+            />
+          ))}
+        </VStack>
       </VStack>
-    </VStack>
+    </Box>
   );
 };
 
