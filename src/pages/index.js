@@ -1,5 +1,5 @@
-import Layout from '../components/Layout';
 import Head from 'next/head';
+import Layout from '../components/Layout';
 import Searchform from '../components/Searchform';
 
 const Index = () => (

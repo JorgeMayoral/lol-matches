@@ -1,4 +1,4 @@
-import { Center, Heading, Flex, Link } from '@chakra-ui/layout';
+import { Center, Flex, Heading, Link } from '@chakra-ui/layout';
 import NextLink from 'next/link';
 
 const Navbar = () => {

@@ -7,8 +7,8 @@ import {
 import { SearchIcon } from '@chakra-ui/icons';
 import { Input } from '@chakra-ui/input';
 import { VStack } from '@chakra-ui/layout';
-import { useState } from 'react';
 import NextLink from 'next/link';
+import { useState } from 'react';
 
 const Searchform = () => {
   const [summoner, setSummoner] = useState('');

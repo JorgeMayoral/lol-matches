@@ -1,6 +1,4 @@
-import { Heading } from '@chakra-ui/layout';
-import { Box } from '@chakra-ui/layout';
-import { VStack } from '@chakra-ui/layout';
+import { Box, Heading, VStack } from '@chakra-ui/layout';
 import ParticipantComponent from './ParticipantComponent';
 
 const TeamComponent = ({ teamData, participants, teamColor }) => {

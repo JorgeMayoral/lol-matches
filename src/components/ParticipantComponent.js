@@ -1,9 +1,5 @@
 import { Image } from '@chakra-ui/image';
-import { Text } from '@chakra-ui/layout';
-import { HStack } from '@chakra-ui/layout';
-import { Center } from '@chakra-ui/layout';
-import { Heading } from '@chakra-ui/layout';
-import { Box } from '@chakra-ui/layout';
+import { Box, Center, Heading, HStack, Text } from '@chakra-ui/layout';
 import championList from '../data/championsData.json';
 
 const ParticipantComponent = ({ participantData }) => {

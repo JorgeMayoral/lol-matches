@@ -1,12 +1,11 @@
+import { Heading, SimpleGrid } from '@chakra-ui/layout';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Layout from '../../components/Layout';
-import getMatches from '../../services/getMatches';
-import Head from 'next/head';
-import SummonerCard from '../../components/SummonerCard';
-import { SimpleGrid } from '@chakra-ui/layout';
 import MatchCard from '../../components/MatchCard';
-import { Heading } from '@chakra-ui/layout';
-import { useRouter } from 'next/router';
+import SummonerCard from '../../components/SummonerCard';
+import getMatches from '../../services/getMatches';
 import getSummoner from '../../services/getSummoner';
 
 const Matches = () => {

@@ -1,5 +1,4 @@
-import { Heading } from '@chakra-ui/layout';
-import { Grid } from '@chakra-ui/layout';
+import { Grid, Heading } from '@chakra-ui/layout';
 
 const MatchComponent = ({ matchData }) => {
   const gameDate = new Date(matchData.gameCreation);

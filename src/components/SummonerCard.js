@@ -1,6 +1,4 @@
-import { Box, Heading, VStack, HStack } from '@chakra-ui/layout';
-import { Image } from '@chakra-ui/image';
-import { Container } from '@chakra-ui/layout';
+import { Box, Container, Heading, HStack, VStack } from '@chakra-ui/layout';
 
 const SummonerCard = ({ summoner }) => {
   return (

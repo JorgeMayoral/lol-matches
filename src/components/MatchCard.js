@@ -1,9 +1,8 @@
-import { Box, Heading, VStack } from '@chakra-ui/layout';
 import { Image } from '@chakra-ui/image';
-import championList from '../data/championsData.json';
-import { useEffect, useState } from 'react';
-import { Center } from '@chakra-ui/layout';
+import { Box, Center, Heading, VStack } from '@chakra-ui/layout';
 import NextLink from 'next/link';
+import { useEffect, useState } from 'react';
+import championList from '../data/championsData.json';
 
 const MatchCard = ({ match }) => {
   const [champ, setChamp] = useState({});
