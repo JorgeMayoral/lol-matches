@@ -1,6 +1,4 @@
-import { Text } from '@chakra-ui/layout';
-import { Center } from '@chakra-ui/layout';
-import { Box } from '@chakra-ui/layout';
+import { Box, Text } from '@chakra-ui/layout';
 import Navbar from './Navbar';
 import Wrapper from './Wrapper';
 

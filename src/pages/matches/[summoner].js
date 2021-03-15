@@ -15,7 +15,7 @@ const Matches = () => {
   const router = useRouter();
 
   const loadMatches = async () => {
-    const data = sessionStorage.getItem(`matches-${accountName}`);
+    const data = sessionStorage.getItem(`matches-${encodeURI(accountName)}`);
     if (data) {
       const parsedData = JSON.parse(data);
       setMatches(parsedData);
@@ -23,14 +23,14 @@ const Matches = () => {
       const response = await getMatches(summoner.accountId);
       setMatches(response.data.matches);
       sessionStorage.setItem(
-        `matches-${accountName}`,
+        `matches-${encodeURI(accountName)}`,
         JSON.stringify(response.data.matches),
       );
     }
   };
 
   const loadSummoner = async () => {
-    const data = sessionStorage.getItem(`summoner-${accountName}`);
+    const data = sessionStorage.getItem(`summoner-${encodeURI(accountName)}`);
     if (data) {
       const parsedData = JSON.parse(data);
       setSummoner(parsedData);
@@ -38,7 +38,7 @@ const Matches = () => {
       const response = await getSummoner(accountName);
       setSummoner(response.data);
       sessionStorage.setItem(
-        `summoner-${accountName}`,
+        `summoner-${encodeURI(accountName)}`,
         JSON.stringify(response.data),
       );
     }

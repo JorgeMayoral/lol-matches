@@ -6,7 +6,8 @@ export default async (req, res) => {
   try {
     const { query } = req;
     const { name } = query;
-    const url = `${API_URL}/${name}/?api_key=${API_KEY}`;
+    const parsedName = encodeURI(name);
+    const url = `${API_URL}/${parsedName}/?api_key=${API_KEY}`;
     const response = await fetch(url);
     const data = await response.json();
     res.json({ data });
