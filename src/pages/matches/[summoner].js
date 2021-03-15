@@ -16,26 +16,32 @@ const Matches = () => {
   const router = useRouter();
 
   const loadMatches = async () => {
-    const data = sessionStorage.getItem('matches');
+    const data = sessionStorage.getItem(`matches-${accountName}`);
     if (data) {
       const parsedData = JSON.parse(data);
       setMatches(parsedData);
     } else {
       const response = await getMatches(summoner.accountId);
       setMatches(response.data.matches);
-      sessionStorage.setItem('matches', JSON.stringify(response.data.matches));
+      sessionStorage.setItem(
+        `matches-${accountName}`,
+        JSON.stringify(response.data.matches),
+      );
     }
   };
 
   const loadSummoner = async () => {
-    const data = sessionStorage.getItem('summoner');
+    const data = sessionStorage.getItem(`summoner-${accountName}`);
     if (data) {
       const parsedData = JSON.parse(data);
       setSummoner(parsedData);
     } else {
       const response = await getSummoner(accountName);
       setSummoner(response.data);
-      sessionStorage.setItem('summoner', JSON.stringify(response.data));
+      sessionStorage.setItem(
+        `summoner-${accountName}`,
+        JSON.stringify(response.data),
+      );
     }
   };
 
