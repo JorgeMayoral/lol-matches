@@ -5,7 +5,7 @@ import Searchform from '../components/Searchform';
 const Index = () => (
   <Layout>
     <Head>
-      <title>LoL Matches</title>
+      <title>LoLMatches</title>
     </Head>
     <Searchform />
   </Layout>

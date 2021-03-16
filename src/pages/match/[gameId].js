@@ -5,6 +5,7 @@ import Layout from '../../components/Layout';
 import MatchComponent from '../../components/MatchComponent';
 import TeamComponent from '../../components/TeamComponent';
 import getMatch from '../../services/getMatch';
+import Head from 'next/head';
 
 const Match = () => {
   const [matchData, setMatchData] = useState(null);
@@ -39,6 +40,9 @@ const Match = () => {
 
   return (
     <Layout>
+      <Head>
+        <title>Match | LoLMAtches</title>
+      </Head>
       {matchData && (
         <>
           <MatchComponent matchData={matchData} />
