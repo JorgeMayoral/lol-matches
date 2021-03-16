@@ -28,6 +28,7 @@ const Searchform = () => {
           color="#1f2933"
           bgColor="#efc9a4"
           variant="solid"
+          isDisabled={!summoner}
         >
           Search
         </Button>
